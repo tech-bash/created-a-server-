@@ -1,0 +1,15 @@
+<?php
+$user= $_POST['usr'];
+$pass= $_POST['pwd'];
+$con =mysqli_connect('localhost','root',' ' ,'axpino live');
+$sql= "SELECT * FROM users WHERE username='$user' AND password ='$pass'"
+$res =mysqli_query($con,$sql);
+$count =mysqli_num_rows($res);
+if ($count>0){
+echo "Welcome user"; 
+}
+else {
+echo "Username or password is incorrect";
+}
+
+?>
